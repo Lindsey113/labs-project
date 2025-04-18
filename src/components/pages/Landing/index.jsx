@@ -32,8 +32,7 @@ export const LandingPage = () => {
 
   return (
     <div className='flex-c w-[100vw] secondary-c'>
-      Landing Page
-      <div>{'Type this into Canvas: ' + decodeBase64('VGltZTJDb2RlIQ==')}</div>
+      
     </div>
   );
 };

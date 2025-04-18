@@ -1,6 +1,7 @@
 import Logo from '../../assets/logo.png';
 import { LoggingButtons } from '../../auth/LoggingButtons.jsx';
 import { NavLink } from 'react-router-dom';
+import { headerSentence } from './text.js';
 
 /**
  * TODO: Ticket 3:
@@ -32,5 +33,6 @@ export default function Header() {
         <LoggingButtons />
       </div>
     </header>
+    
   );
 }
