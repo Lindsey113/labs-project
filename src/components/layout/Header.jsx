@@ -18,6 +18,8 @@ export default function Header() {
           <img className='w-[100px]' src={Logo} alt='HRF logo white' />
         </NavLink>
       </div>
+      
+      
       <div className='flex items-center py-4 gap-16'>
         <NavLink to='/' className='nav-btn'>
           Home
@@ -33,6 +35,5 @@ export default function Header() {
         <LoggingButtons />
       </div>
     </header>
-    
   );
 }
