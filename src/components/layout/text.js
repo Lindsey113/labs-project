@@ -1,2 +1,5 @@
 export const headerSentence = "The Asylum Office Grant Tracker provides asylum seekers, researchers, policymakers, and the public in an interactive tool to explore USCIS data on Asylum Office decisions"
-
+export const hrfPara = "Human Rights First has created a search tool to give you a user-friendly way to explore a data set of asylum decisions between FY 2016 and May 2021 by the USCIS Asylum Office, which we received through a Freedom of Information Act request. You can search for information on asylum grant rates by year, nationality, and asylum office, visualize the data with charts and heat maps, and download the data set."
+export const firstPercent = "By the end of the Trump administration, the average asylum office grant rate had fallen 36% from an average of 44% in fiscal year 2016 to 28% in fiscal year 2020."
+export const secondPercent = "The New York asylum office grant rate dropped to 5% in fiscal year 2020."
+export const sixTimesLower = "Between fiscal year 2017 and 2020, the New York asylum offfice's average grant rate was 6 times lower than the San Francisco asylum office."
