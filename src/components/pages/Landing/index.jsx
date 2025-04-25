@@ -13,6 +13,7 @@ import {
   sixTimesLower
 } from '../../layout/text.js';
 import Header from '../../layout/Header.jsx';
+import { NavLink } from 'react-router-dom';
 
 /**
  * TODO: Ticket 1:
@@ -26,19 +27,18 @@ export const LandingPage = () => {
   const { downloadCSV } = useDownloadData();
 
   const scrollToTop = () => {
-    let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
+    let scrollStep = -window.scrollY / 50; // Adjust the divisor for speed
     let scrollInterval = setInterval(() => {
       if (window.scrollY === 0) {
         clearInterval(scrollInterval);
       } else {
         window.scrollBy(0, scrollStep);
       }
-    }, 10); // Adjust the interval time for smoothness
+    }, 15); // Adjust the interval time for smoothness
   };
 
-  const handleReadMore = () => {
-    // TODO: navigate to the humanrightsfirst.org homepage
-  };
+  // TODO: navigate to the humanrightsfirst.org homepage
+
 
   return (
     <div className='flex-c secondary-c w-[100vw] mb-auto'>
@@ -48,7 +48,7 @@ export const LandingPage = () => {
           <h3 className='text-white'>{headerSentence}</h3>
         </div>
       </section>
-      <section className='graphs-section flex-c pt-10'>
+      <section className='graphs-section flex-col pt-10'>
         <div className='flex-c'>
           <div className='flex justify-center m-14 gap-20 text-2x1'>
             <div className='flex-c gap-3'>
@@ -104,10 +104,12 @@ export const LandingPage = () => {
         </div>
       </section>
       <section>
-        <button className='primary-c text-white px-4 py-2'>Read More</button>
+        <NavLink to='https://www.humanrightsfirst.org/'>
+          <button className='nav-btn'>Read More</button>
+        </NavLink>
       </section>
       <section className='p-16'>
-        <button className='font-medium'>Back To Top ^</button>
+        <button className='font-medium' onClick={scrollToTop}>Back To Top ^</button>
       </section>
     </div>
   );

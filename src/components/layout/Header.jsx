@@ -1,7 +1,6 @@
 import Logo from '../../assets/logo.png';
 import { LoggingButtons } from '../../auth/LoggingButtons.jsx';
 import { NavLink } from 'react-router-dom';
-import { headerSentence } from './text.js';
 
 /**
  * TODO: Ticket 3:
@@ -18,8 +17,8 @@ export default function Header() {
           <img className='w-[100px]' src={Logo} alt='HRF logo white' />
         </NavLink>
       </div>
-      
-      
+
+
       <div className='flex items-center py-4 gap-16'>
         <NavLink to='/' className='nav-btn'>
           Home
