@@ -1,14 +1,15 @@
 import Logo from '../../assets/logo.png';
 import { LoggingButtons } from '../../auth/LoggingButtons.jsx';
 import { NavLink } from 'react-router-dom';
-
 /**
  * TODO: Ticket 3:
  * Implement authentication using Auth0
  */
+
+
 export default function Header() {
   // TODO: Replace me
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <header className='flex w-[100%] primary-c justify-between px-14'>
@@ -20,7 +21,7 @@ export default function Header() {
 
 
       <div className='flex items-center py-4 gap-16'>
-        <NavLink to='/' className='nav-btn'>
+        <NavLink to='/' className='nav-btn' id='test'>
           Home
         </NavLink>
         <NavLink to='/graphs' className='nav-btn'>

@@ -3,6 +3,9 @@ import axios from 'axios';
 import testData from '../data/test_data.json';
 import { useLocalStorage } from '../hooks/useLocalStorage.js';
 
+
+const fiscalURL = 'asylum-be.onrender.com/fiscalSummary'
+const citizenURL = 'asylum-be.onrender.com/citizenshipSummary'
 const AppContext = createContext({});
 
 /**
@@ -14,20 +17,25 @@ const AppContext = createContext({});
 const useAppContextProvider = () => {
   const [graphData, setGraphData] = useState(testData);
   const [isDataLoading, setIsDataLoading] = useState(false);
+  const [fiscalData, setFiscalData] = useState([])
+  const [citizenData, setCitizenData] = useState([])
 
   useLocalStorage({ graphData, setGraphData });
 
-  const getFiscalData = () => {
+  const getFiscalData = async () => {
     // TODO: Replace this with functionality to retrieve the data from the fiscalSummary endpoint
-    const fiscalDataRes = testData;
-    return fiscalDataRes;
+    const [resFiscal] = await Promise.all([axios.get(fiscalURL)])
+    return resFiscal
   };
+  getFiscalData()
 
   const getCitizenshipResults = async () => {
     // TODO: Replace this with functionality to retrieve the data from the citizenshipSummary endpoint
-    const citizenshipRes = testData.citizenshipResults;
-    return citizenshipRes;
+    const resCitizen = await Promise.all([axios.get(citizenURL)])
+    return resCitizen
   };
+  getCitizenshipResults()
+
 
   const updateQuery = async () => {
     setIsDataLoading(true);
