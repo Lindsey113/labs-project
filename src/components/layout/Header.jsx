@@ -10,7 +10,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 export default function Header() {
   // TODO: Replace me
-  const {isAuthenticated} = useAuth0()
+  const { isAuthenticated } = useAuth0()
 
   return (
     <header className='flex w-[100%] primary-c justify-between px-14'>

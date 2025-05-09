@@ -14,7 +14,7 @@ export const NotFoundPage = () => {
         <i>{error.statusText || error.message}</i>
       </p>
       <Link to='/'>
-        <button>Back To Home</button>
+        <button className='nav-btn'>Back To Home</button>
       </Link>
     </div>
   );

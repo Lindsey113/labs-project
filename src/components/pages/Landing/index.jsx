@@ -27,14 +27,14 @@ export const LandingPage = () => {
   const { downloadCSV } = useDownloadData();
 
   const scrollToTop = () => {
-    let scrollStep = -window.scrollY / 50; // Adjust the divisor for speed
+    let scrollStep = -window.scrollY / 50; 
     let scrollInterval = setInterval(() => {
       if (window.scrollY === 0) {
         clearInterval(scrollInterval);
       } else {
         window.scrollBy(0, scrollStep);
       }
-    }, 15); // Adjust the interval time for smoothness
+    }, 15); 
   };
 
   // TODO: navigate to the humanrightsfirst.org homepage

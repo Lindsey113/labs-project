@@ -14,19 +14,15 @@ const AppContext = createContext({});
 const useAppContextProvider = () => {
   const [graphData, setGraphData] = useState({});
   const [isDataLoading, setIsDataLoading] = useState(false);
-
-  useLocalStorage({ graphData, setGraphData });
-
   const API_URL = 'https://asylum-be.onrender.com';
 
+  useLocalStorage({ graphData, setGraphData });
 
   const getFiscalData = async () => {
     try {
       const response = await axios.get(`${API_URL}/fiscalSummary`);
-      console.log("Fiscal response", response.data);
       return response.data;
     } catch (error) {
-      console.error('Error fetching fiscal data:', error);
       return null;
     }
   };
@@ -34,10 +30,8 @@ const useAppContextProvider = () => {
   const getCitizenshipResults = async () => {
     try {
       const response = await axios.get(`${API_URL}/citizenshipSummary`);
-      console.log("Citizenship response", response.data);
       return response.data;
     } catch (error) {
-      console.error('Error fetching citizenship data:', error);
       return null;
     }
   };
@@ -57,7 +51,6 @@ const useAppContextProvider = () => {
           citizenshipResults: citizenshipData
         });
       }
-
       setIsDataLoading(false);
     } catch (error) {
       console.error('Error in fetchData:', error);
@@ -77,7 +70,6 @@ const useAppContextProvider = () => {
     }
   }, [isDataLoading]);
 
-  // Initial data fetch on component mount
   useEffect(() => {
     updateQuery();
   }, []);
